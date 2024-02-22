@@ -2017,6 +2017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1213693086}
   - component: {fileID: 1213693087}
+  - component: {fileID: 1213693088}
   m_Layer: 7
   m_Name: Light
   m_TagString: Untagged
@@ -2033,7 +2034,7 @@ Transform:
   m_GameObject: {fileID: 1213693085}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 0.41, z: 0.034}
+  m_LocalPosition: {x: -0.03, y: 0.41, z: 0.017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2051,9 +2052,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.90188676, g: 0.7116607, b: 0.35224628, a: 1}
-  m_Intensity: 2
-  m_Range: 30
-  m_SpotAngle: 45
+  m_Intensity: 15
+  m_Range: 20
+  m_SpotAngle: 80
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -2101,6 +2102,22 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1213693088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213693085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5405c4867701e24fa265640df799e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spotlight: {fileID: 1213693087}
+  wallDistance: 5
+  maxDistance: 9
+  radiusScalingFactor: 0.8
 --- !u!1001 &1231712252
 PrefabInstance:
   m_ObjectHideFlags: 0
