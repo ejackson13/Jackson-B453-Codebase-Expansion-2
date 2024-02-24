@@ -12,6 +12,8 @@ namespace TG.Core
         [SerializeField] string terrainTag = "Terrain";
         [SerializeField] string playerTag = "Player";
 
+        private bool scalingDisabled = false; // used to prevent this script from updating scaling when a light is shining on the object (we want the light script to handle this)
+
         bool isPlayer;
         float stuckZPosition;
         ShadowTerrainCreator terrainCreator;
@@ -55,11 +57,33 @@ namespace TG.Core
             Vector3 shadowScale = Vector3.one * scaleByDistance;
             shadowScale.z = shadow3D.localScale.z;
 
-            shadow2D.localScale = shadowScale;
+            // check if scaling should be handled by movablelight script
+            if (!scalingDisabled)
+            {
+                shadow2D.localScale = shadowScale;
+            }
 
             if (isPlayer) { shadowScale.z = scaleByDistance; }
 
             shadow3D.localScale = shadowScale;
+        }
+
+
+        public void DisableScaling()
+        {
+            scalingDisabled = true;
+        }
+
+
+        public void EnableScaling()
+        {
+            scalingDisabled = false;
+        }
+
+
+        public bool isScalingEnabled()
+        {
+            return scalingDisabled;
         }
     }
 }
